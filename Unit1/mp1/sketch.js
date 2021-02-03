@@ -31,7 +31,6 @@ function draw() {
  background(100);
 
  if (mouseIsPressed) {
-
    //body
    noStroke();
    fill(172, 115, 57);
@@ -138,6 +137,8 @@ function draw() {
  fill(0);
  textSize(14);
  text(mouseX + " , " + mouseY, 50, 20); //mouse coordinates
+ textSize(18);
+ text("Total hours: 5 hours", 720, 20); //time-log
 }
 
  function touchStarted() {
