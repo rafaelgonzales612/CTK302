@@ -1,66 +1,145 @@
-function setup() {
-  // Sets the screen to be 720 pixels wide and 400 pixels high
-  createCanvas(720, 400);
+let song1, song2;
+let font1;
+let fire;
+let water;
+let earth;
+let air;
+let lightning;
 
+function preload() {
+    song1 = loadSound("assets/magicambience.mp3");
+}
+
+function setup() {
+  createCanvas(800, 800);
+  rectMode(CENTER);
+  ellipseMode(CENTER);
+  textAlign(CENTER);
+  imageMode(CENTER);
+
+  font1 = loadFont("assets/caveatregular.ttf");
+  fire = loadImage("assets/firemagic.png");
+  water = loadImage("assets/watermagic.png");
+  earth = loadImage("assets/earthmagic.png");
+  air = loadImage("assets/airmagic.png");
+  lightning = loadImage("assets/lightningmagic.png");
+
+  song1.loop();
 }
 
 function draw() {
-  background(255);
-  //noStroke();
+ background(100);
 
-  fill(0, 153, 204);
-  rect(0, 0, 720, 275); //sky
+ if (mouseIsPressed) {
 
-  fill(0, 204, 68);
-  rect(0, 275, 720, 125); //ground
-  fill("black");
-  ellipse(81, 250, 50, 50); //back wheel
-  ellipse(180, 250, 50, 50); //front wheel
-  fill("blue");
-  rect(45, 160, 75, 65); //back of truck
-  rect(120, 165, 80, 60, 0, 5, 5, 0); //front of truck
-  fill(153, 153, 255);
-  rect(161, 174, 30, 20, 5); //side window
+   //body
+   noStroke();
+   fill(172, 115, 57);
+   ellipse(width/2, height/2 - 10, 200); //head
+   arc(475, 690, 50, 50, 0, PI); //left hand
+   arc(325, 690, 50, 50, 0, PI); //right hand
+   fill(26);
+   rect(width/2, height/2 + 190, 50, 200); //body, shirt
+   fill(255);
+   rect(width/2 - 15, height/2 + 190, 20, 200); //jacket right
+   rect(width/2 + 15, height/2 + 190, 20, 200); //jacket left
+   quad(375, 500, 375, 550, 350, 690, 300, 690); //right arm
+   quad(425, 500, 425, 550, 450, 690, 500, 690); //left arm
+   fill(0);
+   rect(width/2, 745, 50, 110); //legs
+   stroke("white");
+   line(width/2, 725, width/2, 800);
+   noStroke();
+   fill(0);
+   ellipse(width/2 + 15, height/2 + 100, 7); //buttons
+   ellipse(width/2 + 15, height/2 + 140, 7);
+   ellipse(width/2 + 15, height/2 + 180, 7);
+   ellipse(width/2 + 15, height/2 + 220, 7);
+   ellipse(width/2 + 15, height/2 + 260, 7);
+   fill(0);
+   quad(402, 269, 382, 330, 282, 367, 310, 314); //hair
+   quad(333, 274, 391, 339, 507, 360, 494, 305);
+   quad(430, 276, 493, 321, 506, 400, 477, 378);
+   quad(314, 289, 289, 401, 321, 378, 327, 317);
+   stroke(0);
+   fill(255);
+   arc(width/2 - 30, height/2 - 25, 50, 50, 0, PI, CHORD); //right eye
+   arc(width/2 + 30, height/2 - 25, 50, 50, 0, PI, CHORD); //left eye
+   fill(0);
+   ellipse(width/2 - 30, height/2 - 15, 10, 15);
+   ellipse(width/2 + 30, height/2 - 15, 10, 15);
+   stroke(0);
+   line(400, 450, 430, 440); //mouth
+   line(430, 440, 435, 435);
 
-  fill(128, 43, 0)
-  rect(420, 125, 150); //house
-  fill("gray")
-  triangle(420, 125, 570, 125, 495, 50) //roof
-  fill("silver")
-  rect(445, 150, 30); //window
-  rect(515, 150, 30); //window
-  rect(475, 210, 40, 65); //door
-  ellipse(482, 240, 10); //doorknob
+   image(fire, width/2 - 250, height/2 + 150, 300, 300);
+   image(water, width/2 - 250, height/2 - 100, 200, 200);
+   image(earth, width/2 + 250, height/2 + 250, 200, 200);
+   image(air, width/2 + 250, height/2 - 50, 200, 200);
+   image(lightning, width/2, height/2 - 225, 250, 250);
 
-  fill("yellow");
-  ellipse(720, 0, 100); //sun
-  line(635, 13, 655, 12);
-  line(641, 38, 661, 34);
-  line(655, 60, 675, 50);
-  line(683, 77, 697, 60);
+   fill(0);
+   textSize(26);
+   textFont(font1);
+   text("Kai uses his magical prowess to create elemental magic and protect the world from the forces of Darkness.", width/2, height/2 - 125, 600, 500);
 
-  fill("skyblue");
-  ellipse(135,45,150, 75); //cloud
-  ellipse(330, 60, 150, 75); //cloud
+ } else {
 
-  fill(102, 51, 0);
-  rect(290, 250, 50, 110); //tree trunk
-  fill(51, 204, 51);
-  ellipse(315, 220, 100, 80); //leaves
+   //body
+   noStroke();
+   fill(172, 115, 57);
+   ellipse(width/2, height/2 - 10, 200); //head
+   fill(26);
+   rect(width/2, height/2 + 190, 50, 200); //body, shirt
+   fill(0, 0, 153);
+   rect(width/2 - 15, height/2 + 190, 20, 200); //jacket right
+   rect(width/2 + 15, height/2 + 190, 20, 200); //jacket left
+   quad(375, 500, 375, 550, 350, 690, 300, 690); //right arm
+   quad(425, 500, 425, 550, 450, 690, 500, 690); //left arm
+   fill(255);
+   ellipse(width/2 + 15, height/2 + 100, 7);
+   ellipse(width/2 + 15, height/2 + 140, 7);
+   ellipse(width/2 + 15, height/2 + 180, 7);
+   ellipse(width/2 + 15, height/2 + 220, 7);
+   ellipse(width/2 + 15, height/2 + 260, 7);
+   fill(0);
+   quad(402, 269, 382, 330, 282, 367, 310, 314);
+   quad(333, 274, 391, 339, 507, 360, 494, 305);
+   quad(430, 276, 493, 321, 506, 400, 477, 378);
+   quad(314, 289, 289, 401, 321, 378, 327, 317);
+   stroke(0);
+   fill(172, 115, 57);
+   arc(width/2 - 30, height/2 - 25, 50, 50, 0, PI); //right eye
+   arc(width/2 + 30, height/2 - 25, 50, 50, 0, PI); //left eye
+   fill(0);
+   ellipse(width/2 + 10, height/2 + 50, 20, 20); //mouth
 
-  fill(172, 115, 57);
-  ellipse(640, 220, 20); //head
-  line(640, 230, 640, 260); //body
-  line(640, 235, 620, 240); //arm
-  line(640, 235, 660, 240); //arm
-  line(640, 260, 630, 275); //leg
-  line(640, 260, 650, 275); //leg
+   //props
+   stroke(0);
+   fill(77, 38, 0);
+   rect(400, 745, 800, 110); //table
+   fill(0, 128, 43);
+   rect(120, 675, 150, 30); //book_green
+   fill(0, 92, 230);
+   rect(140, 645, 150, 30); //book_blue
+   fill(230, 0, 0);
+   rect(100, 615, 150, 30); //book_red
+   fill(71, 0, 179);
+   rect(150, 585, 150, 30); //book_purple
+   fill(204, 204, 0);
+   rect(110, 555, 150, 30); //book_yellow
 
+   fill(0);
+   textSize(26);
+   textFont(font1);
+   text("This is Kai. During the day, Kai goes to a prestigious magic academy, only to endlessly daydream or stare out the window. Kai is a natural learner, which helps him get through school. But after school...", width/2, height/2 - 100, 500, 500);
+ }
 
-  fill("black");
-  text(mouseX + ", " + mouseY, 20, 20);
+ fill(0);
+ textSize(14);
+ text(mouseX + " , " + mouseY, 50, 20); //mouse coordinates
 }
 
-function mouseRelease() {
-  print(mouseX + ", " + mouseY);
+ function touchStarted() {
+  getAudioContext().resume();
 }
