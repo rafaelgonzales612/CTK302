@@ -41,7 +41,7 @@ function draw() {
       text("Now I am a rectangle.", 250, 100);
 
       myTimer++
-      if (myTimer > 3 * 60) {
+      if (myTimer > 4 * 60) {
         myTimer = 0;
         myState = 2;
       }
@@ -59,7 +59,7 @@ function draw() {
 
 
       myTimer++
-      if (myTimer > 3 * 60) {
+      if (myTimer > 5 * 60) {
         myTimer = 0;
         myState = 0;
       }
