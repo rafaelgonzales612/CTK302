@@ -17,7 +17,7 @@ function draw() {
     case 0:
       background("red");
       fill("green");
-      ellipse(width/2, height/2, 250, 250);
+      ellipse(width / 2, height / 2, 250, 250);
       fill(0);
       textSize(24);
       textFont(f1);
@@ -34,7 +34,7 @@ function draw() {
     case 1:
       background("green");
       fill("blue");
-      rect(width/2, height/2, 250, 250)
+      rect(width / 2, height / 2, 250, 250)
       fill(0);
       textSize(24);
       textFont(f1);
