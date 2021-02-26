@@ -28,6 +28,9 @@ function draw() {
 
   //option 3
   rect(x, 150, 75, 50);
+  rect(x + 75, 160, 35, 35);
+  ellipse(x + 15, 200, 25, 25);
+  ellipse(x + 60, 200, 25, 25);
   x = x + velocity;
   if (x > width) {
     x = 0;
