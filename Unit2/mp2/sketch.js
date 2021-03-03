@@ -51,13 +51,17 @@ function draw() {
       break;
 
     case 0:
+      song1.play();
+      break;
+
+    case 1:
       background(102, 194, 255);
       cloudSpawn();
       image(bird1, width / 2, height / 2, 250, 200);
 
       timer++
       if (timer > 4 * 60) {
-        state = 1;
+        state = 2;
       }
 
       textSize(24);
@@ -65,7 +69,7 @@ function draw() {
       text("Wait for timer...", 615, 690);
       break;
 
-    case 1:
+    case 2:
       background(102, 194, 255);
       cloudSpawn();
       image(bird2, width / 2, height / 2, 250, 200);
@@ -75,7 +79,7 @@ function draw() {
       text("Click to continue...", 595, 690);
       break;
 
-    case 2:
+    case 3:
       background(102, 194, 255);
 
       image(bird1, width / 2 - 200, height / 2 - 200, 125, 100);
@@ -92,7 +96,7 @@ function draw() {
       }
 
       if (vol > .15) {
-        state = 3;
+        state = 4;
         timer = 0;
       }
 
@@ -101,7 +105,7 @@ function draw() {
       text("When you find food,\ncall out to Mr. Bird!", width / 2, height / 2 - 200);
       break;
 
-    case 3:
+    case 4:
       background(102, 194, 255);
       cloudSpawn();
       image(exclaim, width / 2 + 100, height / 2 - 125, 10, 50);
@@ -109,7 +113,7 @@ function draw() {
 
       timer++
       if (timer > 4 * 60) {
-        state = 4;
+        state = 5;
         timer = 0;
       }
 
@@ -118,7 +122,7 @@ function draw() {
       text("Wait for timer...", 615, 690);
       break;
 
-    case 4:
+    case 5:
       background(102, 194, 255);
       cloudSpawn();
       image(notes, width / 2 + 100, height / 2 - 125, 50, 50);
@@ -141,11 +145,15 @@ function mouseReleased() {
     state = 0;
   }
 
-  if (state == 1) {
-    state = 2;
+  if (state == 0) {
+    state = 1;
   }
 
-  if (state == 4) {
+  if (state == 2) {
+    state = 3;
+  }
+
+  if (state == 5) {
     state = -1;
   }
 }
