@@ -98,6 +98,7 @@ function draw() {
       if (vol > .2) {
         state = 4;
         timer = 0;
+        x6 = 1500;
       }
 
       textSize(24);
