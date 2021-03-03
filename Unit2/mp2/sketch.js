@@ -95,7 +95,7 @@ function draw() {
         x6 = 1500;
       }
 
-      if (vol > .15) {
+      if (vol > .2) {
         state = 4;
         timer = 0;
       }
