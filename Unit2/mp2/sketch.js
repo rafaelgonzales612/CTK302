@@ -24,7 +24,7 @@ function preload() {
 function setup() {
   createCanvas(700, 700);
 
-  song1.play();
+  song1.loop();
 
   mic = new p5.AudioIn();
   mic.start();
