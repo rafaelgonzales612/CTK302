@@ -150,10 +150,6 @@ function mouseReleased() {
   }
 }
 
-function touchStarted() {
-  getAudioContext.resume();
-}
-
 function cloudSpawn() {
   image(cloud1, x1, height / 2 - 270, 125, 125)
   x1 -= 3;
@@ -239,4 +235,8 @@ function loadImages() {
   worm = loadImage("assets/worm.png");
   notes = loadImage("assets/music_notes.png");
   exclaim = loadImage("assets/exclaim.png");
+}
+
+function touchStarted() {
+  getAudioContext.resume();
 }
