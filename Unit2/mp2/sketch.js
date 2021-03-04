@@ -247,5 +247,5 @@ function loadImages() {
 }
 
 function touchStarted() {
-  getAudioContext.resume();
+  getAudioContext().resume();
 }
