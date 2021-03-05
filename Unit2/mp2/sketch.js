@@ -135,9 +135,6 @@ function draw() {
       text("The End!", 640, 690);
       break;
   }
-
-  textSize(12);
-  text(mouseX + ", " + mouseY, 30, 20);
 }
 
 function mouseReleased() {
