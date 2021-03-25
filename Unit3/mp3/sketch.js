@@ -11,6 +11,13 @@ let maxDarkFairies = 5;
 let maxTimer = 60;
 let mp3_background;
 let f1, f2;
+let song1;
+
+function preload() {
+  song1 = loadSound("background_music.mp3");
+
+  song1.loop();
+}
 
 function setup() {
   //createCanvas(windowWidth, windowHeight);
@@ -18,6 +25,8 @@ function setup() {
 
   imageMode(CENTER);
   textAlign(CENTER);
+
+  song1.play();
 
   f1 = loadFont("assets/immortal.ttf");
 
@@ -48,7 +57,7 @@ function setup() {
     darkFairies.push(new DarkFairy());
   }
 
-  naviPos = createVector(width / 2, height/2);
+  naviPos = createVector(width / 2, height / 2);
 
   // ALL load commands here, will need Atom-live-server
 }
@@ -58,7 +67,7 @@ function draw() {
   switch (state) {
 
     case 0:
-      image(mp3_background, width/2, height/2, 700, 700);
+      image(mp3_background, width / 2, height / 2, 700, 700);
       fill(153, 255, 153);
       textFont(f1);
       textSize(32);
@@ -70,18 +79,18 @@ function draw() {
       break;
 
     case 1:
-      image(mp3_background, width/2, height/2, 700, 700);
+      image(mp3_background, width / 2, height / 2, 700, 700);
       game();
       break;
 
     case 2: // win state
-      image(mp3_background, width/2, height/2, 700, 700);
+      image(mp3_background, width / 2, height / 2, 700, 700);
       textSize(28);
       text("You've saved the fairies!\nClick to go save more fairies!", width / 2, height / 2);
       break;
 
     case 3: // lose state
-      image(mp3_background, width/2, height/2, 700, 700);
+      image(mp3_background, width / 2, height / 2, 700, 700);
       textSize(28);
       text("Oh no! The shadow fairies have consumed you!\nClick to respawn and try again.", width / 2, height / 2);
       break;
@@ -121,7 +130,7 @@ function resetGame() {
   }
 
   image(naviC, naviPos.x, naviPos.y, 100, 50);
-  naviPos = createVector(width / 2, height/2);
+  naviPos = createVector(width / 2, height / 2);
 }
 
 function game() {
@@ -165,10 +174,10 @@ function checkForKeys() {
   if (keyIsDown(UP_ARROW)) naviPos.y -= 5;
   if (keyIsDown(DOWN_ARROW)) naviPos.y += 5;
 
-  if(naviPos.x > width) naviPos.x = 0;
-  if(naviPos.x < 0) naviPos.x = width;
-  if(naviPos.y > height) naviPos.y = 0;
-  if(naviPos.y < 0) naviPos.y = height;
+  if (naviPos.x > width) naviPos.x = 0;
+  if (naviPos.x < 0) naviPos.x = width;
+  if (naviPos.y > height) naviPos.y = 0;
+  if (naviPos.y < 0) naviPos.y = height;
 }
 
 // class
@@ -243,4 +252,8 @@ class DarkFairy {
     if (this.pos.y < 0) this.pos.y = height;
   }
 
+}
+
+function touchStarted() {
+  getAudioContext().resume();
 }
