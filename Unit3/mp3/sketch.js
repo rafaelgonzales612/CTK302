@@ -8,14 +8,14 @@ let state = 0;
 let timer = 0;
 let maxFairies = 5;
 let maxDarkFairies = 5;
-let maxTimer = 60;
 let mp3_background;
 let f1, f2;
 let song1;
 
 function preload() {
-  song1 = loadSound("background_music.mp3");
+  song1 = loadSound("assets/backgroundmusic1.mp3");
 
+  song1.play();
   song1.loop();
 }
 
@@ -25,8 +25,6 @@ function setup() {
 
   imageMode(CENTER);
   textAlign(CENTER);
-
-  song1.play();
 
   f1 = loadFont("assets/immortal.ttf");
 
@@ -134,6 +132,11 @@ function resetGame() {
 }
 
 function game() {
+
+  if (!song1.isPlaying()) {
+
+    song1.play();
+  }
 
   // do some actions on the object
   for (let i = 0; i < fairies.length; i++) {
