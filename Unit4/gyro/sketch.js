@@ -56,7 +56,7 @@ function draw() {
   // Text that makes CTK type in the background
   fill('black');
   noStroke();
-  textSize(240);
+  textSize(120);
   textAlign(CENTER);
   text("orpheus", width / 2, height / 2);
 
