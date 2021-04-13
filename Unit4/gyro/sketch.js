@@ -9,20 +9,16 @@ let x = 0, y = 0, z = 0 ; // accelerometer data
 
 
 function setup() {
-
   createCanvas(windowWidth, windowHeight);
-
-
 
   catImage = loadImage("assets/orpheus.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
-
 }
 
 function draw() {
 
-  background('#c6f5ff'); // light blue
+  background('red'); // light blue
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -42,27 +38,27 @@ function draw() {
 
 
   // Text commands that display debugging data
-  textAlign(LEFT);
-  textSize(20);
-  fill('black');
-  text("orientation data:", 25, 25);
-  textSize(15);
-  text("alpha: " + alpha, 25, 50);
-  text("beta: " + beta, 25, 70);
-  text("gamma: " + gamma, 25, 90);
-  textSize(20);
-  text("acceleration data:", 25, 125);
-  textSize(15);
-  text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
-  text("y = " + y.toFixed(2), 25, 170);
-  text("z = " + z.toFixed(4), 25, 190);
+  // textAlign(LEFT);
+  // textSize(20);
+  // fill('black');
+  // text("orientation data:", 25, 25);
+  // textSize(15);
+  // text("alpha: " + alpha, 25, 50);
+  // text("beta: " + beta, 25, 70);
+  // text("gamma: " + gamma, 25, 90);
+  // textSize(20);
+  // text("acceleration data:", 25, 125);
+  // textSize(15);
+  // text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
+  // text("y = " + y.toFixed(2), 25, 170);
+  // text("z = " + z.toFixed(4), 25, 190);
 
   // Text that makes CTK type in the background
-  fill('white');
+  fill('black');
   noStroke();
-  textSize(300);
+  textSize(240);
   textAlign(CENTER);
-  text("ctk", width / 2, height / 2);
+  text("orpheus", width / 2, height / 2);
 
 }
 
