@@ -54,9 +54,9 @@ function draw() {
   // text("z = " + z.toFixed(4), 25, 190);
 
   // Text that makes CTK type in the background
-  fill('black');
+  fill('white');
   noStroke();
-  textSize(120);
+  textSize(100);
   textAlign(CENTER);
   text("orpheus", width / 2, height / 2);
 
