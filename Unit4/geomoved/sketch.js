@@ -18,9 +18,10 @@ function draw() {
 
 }
 function positionPing(position){
-	textSize(24) ;
+  fill("white");
+  textSize(24) ;
 	num++ ;
-	background(255) ;
+	background("black") ;
     text("lat: " + position.latitude, 10, 40);
     text("long: " + position.longitude, 10, 90);
 	text("number of updates " + num, 10, 140) ;
