@@ -73,7 +73,7 @@ function draw() {
 
   positionPing(position);
 
-  if (position.latitude < 39.00 && position.longitude > -87.00) {
+  if (position.latitude > 39 && position.longitude < -87) {
     capture = createCapture(options);
   } else {
     background('red');
