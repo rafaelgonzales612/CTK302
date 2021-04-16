@@ -30,7 +30,7 @@ function preload() {
 
 function setup() {
   //fence = new geoFenceCircle(40.506229, -88.990537, 0.02); //sets geofence location to cva room 17
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(windowWidth, windowHeight);
   num = 0;
   intervalCurrentPosition(positionPing, 5000);
   //places.push(new Place(40.47859881213726, -88.96815846900026, "Rose's House", .02, reggieImg)); // new Place object, for CVA room 17
