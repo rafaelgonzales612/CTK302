@@ -1,0 +1,4 @@
+get latitude/longitude
+  -store latitude and longitude
+    -store in database
+how to write into the google spreadsheet
