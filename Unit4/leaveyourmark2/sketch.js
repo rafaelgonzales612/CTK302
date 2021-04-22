@@ -144,16 +144,16 @@ class Bubble {
 
     if (myLocation == this.place) {
       fill('white');
+      textFont(f1);
+      text(this.name, this.pos.x, this.pos.y - 25);
+      text(this.major, this.pos.x, this.pos.y);
+      text(this.quote, this.pos.x, this.pos.y + 25);
+      text(this.place, this.pos.x, this.pos.y + 50);
     } else {
       fill('grey');
     }
 
-    textFont(f1);
 
-    text(this.name, this.pos.x, this.pos.y - 25);
-    text(this.major, this.pos.x, this.pos.y);
-    text(this.quote, this.pos.x, this.pos.y + 25);
-    text(this.place, this.pos.x, this.pos.y + 50);
 
 
   }
