@@ -42,7 +42,6 @@ function setup() {
   // Dots = loadImage("assets/Dots.png");
   imageMode(CENTER);
   f1 = loadFont("assets/VerlagBold.otf");
-  // textSize(24);
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
@@ -72,7 +71,6 @@ function draw() {
   // image(avengerslogo, width/2, height/2, 900, 900);
 
   textAlign(CENTER);
-
   // textAlign(LEFT);
   // text("lat: " + lat, 10, 340);
   // text("long: " + long, 10, 360);
