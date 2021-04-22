@@ -1,9 +1,6 @@
+// take this survey: https://forms.gle/DydYY5s45FQtdmTF8
+
 var bubbles = [];
-var fire;
-var water;
-var earth;
-var air;
-var avengerslogo;
 var Mark;
 var Dots;
 let places = [];
@@ -22,9 +19,6 @@ function setup() {
   pushPlaces();
 
   // Tabletop stuff, for getting google spreadsheet data in.
-  //let url = '1GtE3eoYVWBv9zMPoyettXzDCEv6qdNGKio_hgEh5duM'; // this is KEY of the URL from the sheet
-  // let url = '1-bKu2MweC4duGRTLNsv6kbvKors5x868IS8UeUTtnSk'; // this is KEY of the URL from the sheet
-  // https://docs.google.com/spreadsheets/d/1-bKu2MweC4duGRTLNsv6kbvKors5x868IS8UeUTtnSk/edit?usp=sharing
   let url = '1ZbfKqOaJuVfgBeo2z_qvbTsQ6-Fe7vv-Q0cmeKz9Yr4'; // this is KEY of the URL from the sheet
   let settings = {
     key: url, // The url of the published google sheet
@@ -68,7 +62,6 @@ function draw() {
   background('#d41f2d');
   // image(Dots, width / 2, height / 2);
   image(Mark, width / 2, height / 2);
-  // image(avengerslogo, width/2, height/2, 900, 900);
 
   textAlign(CENTER);
   // textAlign(LEFT);
@@ -80,7 +73,7 @@ function draw() {
 
   push();
   textSize(24);
-  // // iterate through the bubbles and display the objects if their places match myPlace!
+  // iterate through the bubbles and display the objects if their places match myPlace!
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].display();
     bubbles[i].move();
@@ -98,25 +91,17 @@ function draw() {
 }
 
 function positionPing(position) {
-  // textSize(24);
   num++;
   background(255);
-  //  text("lat: " + position.latitude.toFixed(8), 10, 340);
   lat = position.latitude.toFixed(8);
-  //  text("long: " + position.longitude.toFixed(8), 10, 390);
   long = position.longitude.toFixed(8);
-  //  text("number of updates: " + num, 10, 440);
-  //  distance = calcGeoDistance(locationData.latitude, locationData.longitude, position.latitude, position.longitude, 'mi');
 
   for (var i = 0; i < places.length; i++) {
     if (places[i].fence.insideFence === true) {
-      //  places[i].display();
       myLocation = places[i].desc;
       break; //should break out of the for loop?
-      //text(places[i].desc + ' check1 ' + places[i].fence.insideFence, 10, 240 + (i * 28));
     }
   }
-
 }
 
 // my Bubble class
@@ -133,12 +118,6 @@ class Bubble {
 
 
   display() {
-    // if(this.element == 'Fire') image(fire, this.pos.x, this.pos.y, 100, 100);
-    // if(this.element == 'Water') image(water, this.pos.x, this.pos.y, 100, 100);
-    // if(this.element == 'Earth') image(earth, this.pos.x, this.pos.y, 100, 100);
-    // if(this.element == 'Air') image(air, this.pos.x, this.pos.y, 100, 100);
-
-    //rect(this.pos.x, this.pos.y, 100, 100);
 
     if (myLocation == this.place) {
       fill('white');
@@ -160,7 +139,7 @@ class Bubble {
     this.pos.add(this.vel);
     // if (this.pos.x > width) this.pos.x = 0;
     // if (this.pos.x < 0) this.pos.x = width;
-    // if (this.pos.y > height+500) this.pos.y = 0;
+    // if (this.pos.y > height) this.pos.y = 0;
     if (this.pos.y < 0) this.pos.y = height + 600;
   }
 
