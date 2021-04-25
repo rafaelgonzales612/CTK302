@@ -7,13 +7,14 @@ let places = [];
 let lat = 0;
 let long = 0;
 let num = 0;
-let myLocation = 'loading place';
+let myLocation = 'Illinois State University';
 
 function preload() {
-  locationData = getCurrentPosition();
+
 }
 
 function setup() {
+  locationData = getCurrentPosition();
   intervalCurrentPosition(positionPing, 5000);
 
   pushPlaces();
@@ -69,8 +70,6 @@ function draw() {
   // text("long: " + long, 10, 360);
   // text("number of updates: " + num, 10, 380);
 
-
-
   push();
   textSize(24);
   // iterate through the bubbles and display the objects if their places match myPlace!
@@ -82,11 +81,11 @@ function draw() {
 
   fill('#d41f2d');
   noStroke();
-  rect(width/2, 0, windowWidth, 325);
+  rect(width / 2, 0, windowWidth, 325);
 
   fill('black');
   textSize(48);
-  text("place: " + myLocation, width / 2 , 100);
+  text("place: " + myLocation, width / 2, 100);
 
 }
 
@@ -108,10 +107,10 @@ function positionPing(position) {
 class Bubble {
 
   constructor(myName, myMajor, myQuote, myHint, y) {
-    this.name = myName.replace(/'/g,''); // .replace(/'/g,'') strips the apostrophes out
-    this.major = myMajor.replace(/'/g,'');
-    this.quote = myQuote.replace(/'/g,'');
-    this.place = myHint.replace(/'/g,'');
+    this.name = myName.replace(/'/g, ''); // .replace(/'/g,'') strips the apostrophes out
+    this.major = myMajor.replace(/'/g, '');
+    this.quote = myQuote.replace(/'/g, '');
+    this.place = myHint.replace(/'/g, '');
     this.pos = createVector(width / 2, y);
     this.vel = createVector(0, -3);
   }
@@ -175,7 +174,7 @@ function pushPlaces() {
   places.push(new Place(40.47137301266825, -88.94350239220492, "Check Location", .02)); // new Place object, for ISU bridge over College Ave
   places.push(new Place(40.511276, -88.9911698, "Milner", .02));
   places.push(new Place(40.5087355, -88.9892591, "Stevenson Hall", .02));
-
+  places.push(new Place(40.512216613792866, -88.98539072302248, "Rafael's House", .02));
 
 }
 
