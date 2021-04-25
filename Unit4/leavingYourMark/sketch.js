@@ -174,7 +174,7 @@ function pushPlaces() {
   places.push(new Place(40.47137301266825, -88.94350239220492, "Check Location", .02)); // new Place object, for ISU bridge over College Ave
   places.push(new Place(40.511276, -88.9911698, "Milner", .02));
   places.push(new Place(40.5087355, -88.9892591, "Stevenson Hall", .02));
-  places.push(new Place(40.512216613792866, -88.98539072302248, "Rafael's House", .02));
+  places.push(new Place(40.512216613792866, -88.98539072302248, "Rafael House", .02));
 
 }
 
