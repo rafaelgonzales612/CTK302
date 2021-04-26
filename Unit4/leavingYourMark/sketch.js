@@ -148,7 +148,7 @@ class Bubble {
 
 function pushPlaces() {
   places.push(new Place(40.19580389554057, -88.41188678700051, "Laurens House", .02)); // new Place object, for CVA room 17
-  places.push(new Place(40.512216613792866, -88.998539072302248, "Rafaels House", .02)); // new Place object, for CVA room 17
+  places.push(new Place(40.512216613792866, -88.98539072302248, "Rafaels House", .02)); // new Place object, for CVA room 17
   places.push(new Place(40.53556089911177, -88.9757035113809, "Seans House", .02)); // new Place object, for CVA room 17
   places.push(new Place(40.47859881213726, -88.96815846900026, "Roses House", .02)); // new Place object, for CVA room 17
   places.push(new Place(40.50622797365503, -88.99051350503431, "CVA 17", .02)); // new Place object, for CVA room 17
