@@ -14,7 +14,7 @@ function preload() {
 }
 
 function setup() {
-  locationData = getCurrentPosition();
+    locationData = getCurrentPosition();
   intervalCurrentPosition(positionPing, 5000);
 
   pushPlaces();
@@ -81,11 +81,11 @@ function draw() {
 
   fill('#d41f2d');
   noStroke();
-  rect(width / 2, 0, windowWidth, 325);
+  rect(width/2, 0, windowWidth, 325);
 
   fill('black');
   textSize(48);
-  text("place: " + myLocation, width / 2, 100);
+  text("place: " + myLocation, width / 2 , 100);
 
 }
 
@@ -107,10 +107,10 @@ function positionPing(position) {
 class Bubble {
 
   constructor(myName, myMajor, myQuote, myHint, y) {
-    this.name = myName.replace(/'/g, ''); // .replace(/'/g,'') strips the apostrophes out
-    this.major = myMajor.replace(/'/g, '');
-    this.quote = myQuote.replace(/'/g, '');
-    this.place = myHint.replace(/'/g, '');
+    this.name = myName.replace(/'/g,''); // .replace(/'/g,'') strips the apostrophes out
+    this.major = myMajor.replace(/'/g,'');
+    this.quote = myQuote.replace(/'/g,'');
+    this.place = myHint.replace(/'/g,'');
     this.pos = createVector(width / 2, y);
     this.vel = createVector(0, -3);
   }
@@ -147,6 +147,9 @@ class Bubble {
 
 
 function pushPlaces() {
+  places.push(new Place(40.19580389554057, -88.41188678700051, "Laurens House", .02)); // new Place object, for CVA room 17
+  places.push(new Place(40.512216613792866, -88.998539072302248, "Rafaels House", .02)); // new Place object, for CVA room 17
+  places.push(new Place(40.53556089911177, -88.9757035113809, "Seans House", .02)); // new Place object, for CVA room 17
   places.push(new Place(40.47859881213726, -88.96815846900026, "Roses House", .02)); // new Place object, for CVA room 17
   places.push(new Place(40.50622797365503, -88.99051350503431, "CVA 17", .02)); // new Place object, for CVA room 17
   places.push(new Place(40.50715473783438, -88.99173550368103, "COB", .02)); // new Place object, for COB.... JUST SWITCHED TO NEW COORDINATES
@@ -174,7 +177,7 @@ function pushPlaces() {
   places.push(new Place(40.47137301266825, -88.94350239220492, "Check Location", .02)); // new Place object, for ISU bridge over College Ave
   places.push(new Place(40.511276, -88.9911698, "Milner", .02));
   places.push(new Place(40.5087355, -88.9892591, "Stevenson Hall", .02));
-  places.push(new Place(40.5121770927624, -88.98534754642996, "Rafael House", .02));
+
 
 }
 
